@@ -112,19 +112,7 @@ export default function SignInPage() {
           </div>
         </div>
 
-        {/* Graphic */}
-
-        <div className={styles.graphicPanel}>
-          <Image
-            src="/images/heroimg_1.png"
-            alt="Network"
-            fill
-            priority
-            className={
-              styles.graphicImage
-            }
-          />
-        </div>
+       
       </div>
     </section>
   );

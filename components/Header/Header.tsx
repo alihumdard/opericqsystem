@@ -52,7 +52,7 @@ export function Header({ logo, navigation, cta }: HeaderProps) {
       </nav>
 
       <div className={styles.actions}>
-        <Link className={styles.cta} href={cta.href}>
+        <Link href="/onboarding" className={styles.cta} >
           {cta.label}
           <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
         </Link>

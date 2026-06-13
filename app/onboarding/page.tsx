@@ -124,444 +124,436 @@ export default function OnboardingPage() {
         </aside>
 
         {/* Main Content */}
+        <div className={styles.contentWrapper}>
+                <main className={styles.content}>
+                  <div className={styles.formWrapper}>
+                    {/* STEP 1 */}
 
-        <main className={styles.content}>
-          <div className={styles.formWrapper}>
-            {/* STEP 1 */}
-
-            {step === 1 && (
-              <>
-                <span
-                  className={styles.badge}
-                >
-                  STEP 01
-                </span>
-
-                <h1>Create Your Account</h1>
-
-                <p
-                  className={styles.subtitle}
-                >
-                  Let's get started with
-                  your administrator
-                  account.
-                </p>
-
-                <div
-                  className={styles.formGrid}
-                >
-                  <input
-                    className={
-                      styles.formInput
-                    }
-                    placeholder="Full Name"
-                  />
-
-                  <input
-                    className={
-                      styles.formInput
-                    }
-                    type="email"
-                    placeholder="Business Email"
-                  />
-
-                  <input
-                    className={
-                      styles.formInput
-                    }
-                    type="password"
-                    placeholder="Password"
-                  />
-
-                  <input
-                    className={
-                      styles.formInput
-                    }
-                    type="password"
-                    placeholder="Confirm Password"
-                  />
-
-                  <input
-                    className={
-                      styles.formInput
-                    }
-                    placeholder="Organization Name"
-                  />
-                </div>
-
-                <button
-                  className={
-                    styles.primaryBtn1
-                  }
-                  onClick={() =>
-                    setStep(2)
-                  }
-                >
-                  Continue
-                </button>
-
-                <p
-                  className={styles.signIn}
-                >
-                  Already have an account?
-                  <span>
-                    <Link href="/signin"> Sign In</Link>
-                  </span>
-                </p>
-              </>
-            )}
-
-            {/* STEP 2 */}
-
-            {step === 2 && (
-              <>
-                <span
-                  className={styles.badge}
-                >
-                  STEP 02
-                </span>
-
-                <h1>
-                  Organization Profile
-                </h1>
-
-                <p
-                  className={styles.subtitle}
-                >
-                  Tell us about your
-                  organization.
-                </p>
-
-                <div
-                  className={styles.formGrid}
-                >
-                  <select
-                    className={
-                      styles.formSelect
-                    }
-                  >
-                    <option>
-                      Select Industry
-                    </option>
-
-                    {industries.map(
-                      (industry) => (
-                        <option
-                          key={industry}
+                    {step === 1 && (
+                      <>
+                        <span
+                          className={styles.badge}
                         >
-                          {industry}
-                        </option>
-                      )
-                    )}
-                  </select>
+                          STEP 01
+                        </span>
 
-                  <select
-                    className={
-                      styles.formSelect
-                    }
-                  >
-                    <option>
-                      Company Size
-                    </option>
+                        <h1>Create Your Account</h1>
 
-                    {companySizes.map(
-                      (size) => (
-                        <option
-                          key={size}
+                        <p
+                          className={styles.subtitle}
                         >
-                          {size}
-                        </option>
-                      )
-                    )}
-                  </select>
+                          Let's get started with
+                          your administrator
+                          account.
+                        </p>
 
-                  <input
-                    className={
-                      styles.formInput
-                    }
-                    placeholder="Company Website"
-                  />
-
-                  <select
-                    className={
-                      styles.formSelect
-                    }
-                  >
-                    <option>
-                      Primary Operational
-                      Area
-                    </option>
-
-                    {operationalAreas.map(
-                      (area) => (
-                        <option
-                          key={area}
+                        <div
+                          className={styles.formGrid}
                         >
-                          {area}
-                        </option>
-                      )
-                    )}
-                  </select>
-                </div>
+                          <input
+                            className={
+                              styles.formInput
+                            }
+                            placeholder="Full Name"
+                          />
 
-                <div
-                  className={styles.actions}
-                >
-                  <button
-                    className={
-                      styles.secondaryBtn
-                    }
-                    onClick={() =>
-                      setStep(1)
-                    }
-                  >
-                    Back
-                  </button>
+                          <input
+                            className={
+                              styles.formInput
+                            }
+                            type="email"
+                            placeholder="Business Email"
+                          />
 
-                  <button
-                    className={
-                      styles.primaryBtn
-                    }
-                    onClick={() =>
-                      setStep(3)
-                    }
-                  >
-                    Continue
-                  </button>
-                </div>
-              </>
-            )}
+                          <input
+                            className={
+                              styles.formInput
+                            }
+                            type="password"
+                            placeholder="Password"
+                          />
 
-            {/* STEP 3 */}
+                          <input
+                            className={
+                              styles.formInput
+                            }
+                            type="password"
+                            placeholder="Confirm Password"
+                          />
 
-            {step === 3 && (
-              <>
-                <span
-                  className={styles.badge}
-                >
-                  STEP 03
-                </span>
+                          <input
+                            className={
+                              styles.formInput
+                            }
+                            placeholder="Organization Name"
+                          />
+                        </div>
 
-                <h1>
-                  Operational Needs
-                </h1>
-
-                <p
-                  className={styles.subtitle}
-                >
-                  Help us understand your
-                  operational
-                  requirements.
-                </p>
-
-                <textarea
-                  className={
-                    styles.formTextarea
-                  }
-                  placeholder="Describe your biggest workflow challenge..."
-                />
-
-                <textarea
-                  className={
-                    styles.formTextarea
-                  }
-                  placeholder="Current operational tools/systems used..."
-                />
-
-                <h3
-                  className={
-                    styles.sectionTitle
-                  }
-                >
-                  Interested Modules
-                </h3>
-
-                <div
-                  className={
-                    styles.moduleGrid
-                  }
-                >
-                  {modules.map(
-                    (module) => (
-                      <button
-  key={module.id}
-  type="button"
-  className={`${styles.moduleCard}
-  ${
-    selectedModules.includes(module.id)
-      ? styles.selected
-      : ""
-  }`}
-  onClick={() =>
-    toggleModule(module.id)
-  }
->
-  <span
-    className={styles.moduleIcon}
-    style={{
-      color: module.color,
-    }}
-  >
-    {module.icon}
-  </span>
-
-  <span
-    className={styles.moduleTitle}
-    style={{
-      color: module.color,
-    }}
-  >
-    {module.title}
-  </span>
-</button>
-                    )
-                  )}
-                </div>
-
-                <h3
-                  className={
-                    styles.sectionTitle
-                  }
-                >
-                  Interested In
-                </h3>
-
-                <div
-                  className={
-                    styles.checkboxGrid
-                  }
-                >
-                  {interests.map(
-                    (interest) => (
-                      <label
-                        key={
-                          interest.id
-                        }
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selectedInterests.includes(
-                            interest.id
-                          )}
-                          onChange={() =>
-                            toggleInterest(
-                              interest.id
-                            )
+                        <button
+                          className={
+                            styles.primaryBtn1
                           }
+                          onClick={() =>
+                            setStep(2)
+                          }
+                        >
+                          Continue
+                        </button>
+
+                        <p
+                          className={styles.signIn}
+                        >
+                          Already have an account?
+                          <span>
+                            <Link href="/signin"> Sign In</Link>
+                          </span>
+                        </p>
+                      </>
+                    )}
+
+                    {/* STEP 2 */}
+
+                    {step === 2 && (
+                      <>
+                        <span
+                          className={styles.badge}
+                        >
+                          STEP 02
+                        </span>
+
+                        <h1>
+                          Organization Profile
+                        </h1>
+
+                        <p
+                          className={styles.subtitle}
+                        >
+                          Tell us about your
+                          organization.
+                        </p>
+
+                        <div
+                          className={styles.formGrid}
+                        >
+                          <select
+                            className={
+                              styles.formSelect
+                            }
+                          >
+                            <option>
+                              Select Industry
+                            </option>
+
+                            {industries.map(
+                              (industry) => (
+                                <option
+                                  key={industry}
+                                >
+                                  {industry}
+                                </option>
+                              )
+                            )}
+                          </select>
+
+                          <select
+                            className={
+                              styles.formSelect
+                            }
+                          >
+                            <option>
+                              Company Size
+                            </option>
+
+                            {companySizes.map(
+                              (size) => (
+                                <option
+                                  key={size}
+                                >
+                                  {size}
+                                </option>
+                              )
+                            )}
+                          </select>
+
+                          <input
+                            className={
+                              styles.formInput
+                            }
+                            placeholder="Company Website"
+                          />
+
+                          <select
+                            className={
+                              styles.formSelect
+                            }
+                          >
+                            <option>
+                              Primary Operational
+                              Area
+                            </option>
+
+                            {operationalAreas.map(
+                              (area) => (
+                                <option
+                                  key={area}
+                                >
+                                  {area}
+                                </option>
+                              )
+                            )}
+                          </select>
+                        </div>
+
+                        <div
+                          className={styles.actions}
+                        >
+                          <button
+                            className={
+                              styles.secondaryBtn
+                            }
+                            onClick={() =>
+                              setStep(1)
+                            }
+                          >
+                            Back
+                          </button>
+
+                          <button
+                            className={
+                              styles.primaryBtn
+                            }
+                            onClick={() =>
+                              setStep(3)
+                            }
+                          >
+                            Continue
+                          </button>
+                        </div>
+                      </>
+                    )}
+
+                    {/* STEP 3 */}
+
+                    {step === 3 && (
+                      <>
+                        <span
+                          className={styles.badge}
+                        >
+                          STEP 03
+                        </span>
+
+                        <h1>
+                          Operational Needs
+                        </h1>
+
+                        <p
+                          className={styles.subtitle}
+                        >
+                          Help us understand your
+                          operational
+                          requirements.
+                        </p>
+
+                        <textarea
+                          className={
+                            styles.formTextarea
+                          }
+                          placeholder="Describe your biggest workflow challenge..."
                         />
 
-                        {
-                          interest.label
-                        }
-                      </label>
-                    )
-                  )}
-                </div>
+                        <textarea
+                          className={
+                            styles.formTextarea
+                          }
+                          placeholder="Current operational tools/systems used..."
+                        />
 
-                <div
-                  className={styles.actions}
-                >
-                  <button
-                    className={
-                      styles.secondaryBtn
-                    }
-                    onClick={() =>
-                      setStep(2)
-                    }
-                  >
-                    Back
-                  </button>
+                        <h3
+                          className={
+                            styles.sectionTitle
+                          }
+                        >
+                          Interested Modules
+                        </h3>
 
-                  <button
-                    className={
-                      styles.primaryBtn
-                    }
-                    onClick={() =>
-                      setStep(4)
-                    }
-                  >
-                    Continue
-                  </button>
-                </div>
-              </>
-            )}
-
-            {/* STEP 4 */}
-
-          {step === 4 && (
-  <div className={styles.confirmation}>
-    <div className={styles.successIcon}>
-      ✓
-    </div>
-
-    <h1 className={styles.confirmationTitle}>
-      You're All Set!
-    </h1>
-
-    <p className={styles.confirmationText}>
-      Thank you for onboarding with Operiq Systems.
-      <br />
-      Your information has been received.
-    </p>
-
-    <div className={styles.confirmationCard}>
-      <div className={styles.confirmationItem}>
-        <Mail size={28} />
-
-        <div>
-          <p>
-            We've sent a confirmation email to
-          </p>
-
-          <span>
-            name@yourcompany.com
+                        <div
+                          className={
+                            styles.moduleGrid
+                          }
+                        >
+                          {modules.map(
+                            (module) => (
+                              <button
+          key={module.id}
+          type="button"
+          className={`${styles.moduleCard}
+          ${
+            selectedModules.includes(module.id)
+              ? styles.selected
+              : ""
+          }`}
+          onClick={() =>
+            toggleModule(module.id)
+          }
+        >
+          <span
+            className={styles.moduleIcon}
+            style={{
+              color: module.color,
+            }}
+          >
+            {module.icon}
           </span>
-        </div>
-      </div>
 
-      <div className={styles.confirmationItem}>
-        <Bell size={28} />
+          <span
+            className={styles.moduleTitle}
+            style={{
+              color: module.color,
+            }}
+          >
+            {module.title}
+          </span>
+        </button>
+                            )
+                          )}
+                        </div>
 
-        <div>
-          <p>
-            Our team has been notified and will
-            reach out soon.
-          </p>
-        </div>
-      </div>
+                        <h3
+                          className={
+                            styles.sectionTitle
+                          }
+                        >
+                          Interested In
+                        </h3>
 
-      <div className={styles.confirmationItem}>
-        <BarChart3 size={28} />
+                        <div
+                          className={
+                            styles.checkboxGrid
+                          }
+                        >
+                          {interests.map(
+                            (interest) => (
+                              <label
+                                key={
+                                  interest.id
+                                }
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={selectedInterests.includes(
+                                    interest.id
+                                  )}
+                                  onChange={() =>
+                                    toggleInterest(
+                                      interest.id
+                                    )
+                                  }
+                                />
 
-        <div>
-          <p>
-            You can now access your dashboard
-            and explore the platform.
-          </p>
-        </div>
-      </div>
-    </div>
+                                {
+                                  interest.label
+                                }
+                              </label>
+                            )
+                          )}
+                        </div>
 
-    <button className={styles.dashboardBtn}>
-      Go to Dashboard
+                        <div
+                          className={styles.actions}
+                        >
+                          <button
+                            className={
+                              styles.secondaryBtn
+                            }
+                            onClick={() =>
+                              setStep(2)
+                            }
+                          >
+                            Back
+                          </button>
 
-      <ArrowRight size={18} />
-    </button>
-  </div>
-          )}
+                          <button
+                            className={
+                              styles.primaryBtn
+                            }
+                            onClick={() =>
+                              setStep(4)
+                            }
+                          >
+                            Continue
+                          </button>
+                        </div>
+                      </>
+                    )}
+
+                    {/* STEP 4 */}
+
+                  {step === 4 && (
+          <div className={styles.confirmation}>
+            <div className={styles.successIcon}>
+              ✓
+            </div>
+
+            <h1 className={styles.confirmationTitle}>
+              You're All Set!
+            </h1>
+
+            <p className={styles.confirmationText}>
+              Thank you for onboarding with Operiq Systems.
+              <br />
+              Your information has been received.
+            </p>
+
+            <div className={styles.confirmationCard}>
+              <div className={styles.confirmationItem}>
+                <Mail size={28} />
+
+                <div>
+                  <p>
+                    We've sent a confirmation email to
+                  </p>
+
+                  <span>
+                    name@yourcompany.com
+                  </span>
+                </div>
+              </div>
+
+              <div className={styles.confirmationItem}>
+                <Bell size={28} />
+
+                <div>
+                  <p>
+                    Our team has been notified and will
+                    reach out soon.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.confirmationItem}>
+                <BarChart3 size={28} />
+
+                <div>
+                  <p>
+                    You can now access your dashboard
+                    and explore the platform.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button className={styles.dashboardBtn}>
+              Go to Dashboard
+
+              <ArrowRight size={18} />
+            </button>
           </div>
-        </main>
-
+                  )}
+                  </div>
+                </main>
+        </div>
         {/* Right Graphic */}
-<div className={styles.graphicPanel}>
-  <Image
-    src="/images/heroimg_1.png"
-    alt="Network Visualization"
-    fill
-    priority
-    className={styles.graphicImage}
-  />
-</div>
+
       </div>
     </section>
   );
