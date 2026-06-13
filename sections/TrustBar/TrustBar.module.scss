@@ -1,0 +1,249 @@
+.trustBar {
+  width: 100%;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(14, 116, 144, 0.12), transparent 28rem),
+    #020617;
+}
+
+:global(:root[data-theme="light"]) .trustBar {
+  border-top-color: var(--section-border);
+  border-bottom-color: var(--section-border);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(14, 116, 144, 0.1), transparent 28rem),
+    #f8fbff;
+}
+
+:global(:root[data-theme="light"]) .logoItem,
+:global(:root[data-theme="light"]) .moreLink {
+  color: #273449;
+  opacity: 0.88;
+  filter: grayscale(100%) brightness(0.72) contrast(1.2);
+}
+
+:global(:root[data-theme="light"]) .logoItem:hover,
+:global(:root[data-theme="light"]) .moreLink:hover {
+  color: #07111f;
+  opacity: 1;
+  filter: grayscale(0%) brightness(0.86) contrast(1.25);
+}
+
+:global(:root[data-theme="light"]) .logoItem small,
+:global(:root[data-theme="light"]) .logoMark {
+  color: #273449;
+}
+
+:global(:root[data-theme="light"]) .badge .logoMark {
+  border-color: rgba(39, 52, 73, 0.48);
+  background: rgba(15, 23, 42, 0.035);
+}
+
+.inner {
+  width: min(100% - 5.5rem, 1520px);
+  margin: 0 auto;
+  padding: clamp(1.1rem, 2.25vw, 1.45rem) 0;
+}
+
+.title {
+  margin: 0;
+  color: #38bdf8;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.logoRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.8rem, 5vw, 4rem);
+  margin-top: clamp(0.85rem, 1.7vw, 1.1rem);
+}
+
+.logoItem,
+.moreLink {
+  min-width: 5.35rem;
+  min-height: 2.65rem;
+}
+
+.logoItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(248, 250, 252, 0.95);
+  filter: none;
+  opacity: 0.86;
+
+  small {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 0.58rem);
+    width: max-content;
+    max-width: 7.5rem;
+    color: rgba(226, 232, 240, 0.78);
+    font-size: 0.28rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+}
+
+.logoMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8fafc;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.badge .logoMark {
+  width: 3.1rem;
+  height: 3.1rem;
+  border: 1px solid rgba(248, 250, 252, 0.72);
+  background: rgba(248, 250, 252, 0.12);
+  font-family: var(--font-sans);
+  font-size: 1.28rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.wordmark .logoMark {
+  min-width: 7.35rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+}
+
+.emblem {
+  gap: 0.7rem;
+
+  .logoMark {
+    min-width: 6.9rem;
+    gap: 0.55rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+
+    &::before {
+      display: inline-block;
+      width: 2.55rem;
+      height: 1.62rem;
+      content: "";
+      border: 2px solid currentColor;
+      border-radius: 0.18rem;
+      background:
+        linear-gradient(90deg, transparent 0 28%, currentColor 28% 34%, transparent 34% 66%, currentColor 66% 72%, transparent 72%),
+        linear-gradient(0deg, currentColor 0 16%, transparent 16% 100%);
+      opacity: 0.9;
+    }
+  }
+}
+
+.orbit .logoMark {
+  position: relative;
+  min-width: 5.8rem;
+  min-height: 2.8rem;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4.7rem;
+    height: 0.08rem;
+    content: "";
+    background: currentColor;
+    opacity: 0.72;
+    transform: translate(-50%, -50%) rotate(-28deg);
+  }
+
+  &::after {
+    width: 5.25rem;
+    opacity: 0.48;
+    transform: translate(-50%, -50%) rotate(-56deg);
+  }
+}
+
+.moreLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(226, 232, 240, 0.82);
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.72;
+  transition:
+    color 300ms ease-in-out,
+    opacity 300ms ease-in-out;
+
+  &:hover {
+    color: #f8fafc;
+    opacity: 0.82;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 780px) {
+  .inner {
+    width: min(100% - 2rem, 1180px);
+    padding: 1.15rem 0 1.25rem;
+  }
+
+  .logoRow {
+    gap: 1.2rem 1.65rem;
+  }
+
+  .logoItem,
+  .moreLink {
+    min-width: 4.3rem;
+    min-height: 2.12rem;
+    transform: scale(0.8);
+  }
+
+}
+
+@media (max-width: 480px) {
+  .inner {
+    width: min(100% - 1.5rem, 1180px);
+    padding: 1rem 0 1.1rem;
+  }
+
+  .logoRow {
+    gap: 1rem 1.2rem;
+  }
+
+  .title {
+    letter-spacing: 0.12em;
+  }
+
+  .logoItem,
+  .moreLink {
+    min-width: 3.8rem;
+    min-height: 1.9rem;
+    transform: scale(0.72);
+  }
+
+}

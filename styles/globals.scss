@@ -1,0 +1,91 @@
+/*
+ * GLOBAL FONT CONVENTION — DO NOT OVERRIDE font-family in module files
+ *
+ * Body/UI text  → font-family: var(--font-sans)   → Inter (set on <body>, inherited everywhere)
+ * Brand/display → font-family: var(--font-brand)  → Orbitron (use only for logos / hero headlines)
+ *
+ * Never hard-code a font-family in a .module.scss file.
+ * If you need to deviate, re-assign the variable locally:
+ *   .myComponent { --font-sans: "SomeOtherFont", sans-serif; }
+ */
+
+:root {
+  color-scheme: dark;
+  --page-bg: #020913;
+  --page-text: #ffffff;
+  --page-text1:rgb(8, 8, 8)f;
+  --font-sans: var(--font-body), Arial, Helvetica, sans-serif;
+  --font-brand: var(--font-display), "Arial Black", Arial, sans-serif;
+  --layout-max: 1440px;
+  --layout-gutter: clamp(1.25rem, 3.9vw, 3.25rem);
+  --color-blue-300: #55cfff;
+  --color-blue-400: #159cff;
+  --color-blue-500: #0077ff;
+  --color-blue-600: #005ee8;
+  --header-height: 5.6rem;
+  --header-bg: rgba(1, 7, 17, 0.62);
+  --header-border: rgba(44, 151, 255, 0.08);
+  --header-link: rgba(255, 255, 255, 0.88);
+  --header-link-hover: #ffffff;
+  --header-control-bg: rgba(2, 13, 27, 0.46);
+  --header-logo-core: #031121;
+  // background: #020913;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page-bg: #f8fbff;
+  --page-text: #020617;
+  --header-bg: rgba(248, 251, 255, 0.78);
+  --header-border: rgba(15, 23, 42, 0.12);
+  --header-link: rgba(15, 23, 42, 0.82);
+  --header-link-hover: #020617;
+  --header-control-bg: rgba(255, 255, 255, 0.72);
+  --header-logo-core: #f8fbff;
+  --section-bg: #f8fbff;
+  --section-bg-deep: #eef6ff;
+  --section-surface: rgba(255, 255, 255, 0.72);
+  --section-border: rgba(15, 23, 42, 0.12);
+  --section-heading: #07111f;
+  --section-text: rgba(15, 23, 42, 0.76);
+  --section-muted: rgba(51, 65, 85, 0.76);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--page-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--page-text);
+  background: var(--page-bg);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    color 240ms ease,
+    background 240ms ease;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

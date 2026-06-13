@@ -1,0 +1,170 @@
+.finalCta {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(30, 41, 59, 0.9);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.9);
+  background:
+    linear-gradient(158deg, transparent 0 30%, rgba(14, 165, 233, 0.22) 30.2%, transparent 31%),
+    linear-gradient(171deg, transparent 0 62%, rgba(37, 99, 235, 0.22) 62.2%, transparent 63%),
+    linear-gradient(16deg, transparent 0 75%, rgba(14, 165, 233, 0.2) 75.2%, transparent 76%),
+    radial-gradient(circle at 17% 76%, rgba(0, 112, 243, 0.32), transparent 19rem),
+    radial-gradient(circle at 86% 42%, rgba(14, 165, 233, 0.2), transparent 22rem),
+    #020617;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+      repeating-linear-gradient(12deg, transparent 0 4.8rem, rgba(56, 189, 248, 0.12) 4.86rem 4.94rem),
+      repeating-linear-gradient(104deg, transparent 0 5.8rem, rgba(37, 99, 235, 0.12) 5.86rem 5.94rem);
+    opacity: 0.46;
+    transform: perspective(50rem) rotateX(62deg) translateY(18%);
+    transform-origin: bottom center;
+    pointer-events: none;
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    content: "";
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.55), transparent);
+  }
+}
+
+:global(:root[data-theme="light"]) .finalCta {
+  border-top-color: var(--section-border);
+  border-bottom-color: var(--section-border);
+  background:
+    linear-gradient(158deg, transparent 0 30%, rgba(14, 165, 233, 0.12) 30.2%, transparent 31%),
+    linear-gradient(171deg, transparent 0 62%, rgba(37, 99, 235, 0.12) 62.2%, transparent 63%),
+    radial-gradient(circle at 17% 76%, rgba(0, 112, 243, 0.12), transparent 19rem),
+    radial-gradient(circle at 86% 42%, rgba(14, 165, 233, 0.1), transparent 22rem),
+    #eef6ff;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(2rem, 5.5vw, 5.5rem);
+  width: min(100% - 5.5rem, 1520px);
+  margin: 0 auto;
+  padding: clamp(1.15rem, 2.7vw, 1.75rem) 0;
+}
+
+.copy {
+  justify-self: center;
+  width: min(100%, 60rem);
+  transform: translateX(-3rem);
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.45rem, 2.35vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  p {
+    max-width: 50rem;
+    margin: 0.42rem auto 0;
+    color: rgba(203, 213, 225, 0.9);
+    font-size: clamp(0.88rem, 1.08vw, 1rem);
+    font-weight: 450;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+}
+
+:global(:root[data-theme="light"]) .copy h2 {
+  color: var(--section-heading);
+}
+
+:global(:root[data-theme="light"]) .copy p {
+  color: var(--section-text);
+}
+
+.button {
+  justify-self: center;
+  transform: translateX(-6rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12.5rem;
+  min-height: 3.45rem;
+  padding: 0 1.55rem;
+  border: 1px solid rgba(125, 211, 252, 0.8);
+  border-radius: 0.35rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #005cff, #0ea5e9);
+  box-shadow:
+    0 0 14px rgba(0, 112, 243, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  gap: 0.95rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  white-space: nowrap;
+  transition:
+    box-shadow 250ms ease,
+    transform 250ms ease,
+    border-color 250ms ease;
+
+  &:hover {
+    border-color: #bae6fd;
+    box-shadow:
+      0 0 20px rgba(0, 112, 243, 0.38),
+      0 0 34px rgba(14, 165, 233, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transform: translate(-6rem, -2px);
+  }
+}
+
+@media (max-width: 760px) {
+  .inner {
+    grid-template-columns: 1fr;
+    width: min(100% - 2rem, 1180px);
+    justify-items: center;
+    gap: 1.35rem;
+    padding: 2rem 0;
+  }
+
+  .copy {
+    transform: none;
+    text-align: center;
+  }
+
+  .button {
+    justify-self: center;
+    transform: none;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    width: min(100% - 1.5rem, 1180px);
+    gap: 1.1rem;
+    padding: 1.75rem 0;
+  }
+
+  .copy h2 {
+    font-size: 1.32rem;
+  }
+
+  .button {
+    min-width: 12.5rem;
+    min-height: 3.1rem;
+  }
+}
